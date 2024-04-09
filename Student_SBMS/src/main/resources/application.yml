@@ -1,0 +1,16 @@
+server:
+  port: 9986
+spring:
+  application:
+    name: Student_SBMS
+  datasource:
+    password: Raju@8465
+    url: jdbc:mysql://localhost:3306/myprojects
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+

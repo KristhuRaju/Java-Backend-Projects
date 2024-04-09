@@ -1,0 +1,44 @@
+package spring.raju.dev.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.extern.log4j.Log4j2;
+import spring.raju.dev.request.PaymentRequest;
+import spring.raju.dev.response.PaymentResponse;
+import spring.raju.dev.service.paymentservice;
+
+@Controller
+@RequestMapping("/payment")
+@Log4j2
+public class PaymentController {
+
+	@Autowired
+	private paymentservice service;
+	
+	@PostMapping
+	public ResponseEntity<Long> doPayment(@RequestBody PaymentRequest paymentRequest){
+        log.info("PaymentController | doPayment is called");
+
+        log.info("PaymentController | doPayment | paymentRequest : " + paymentRequest.toString());
+		return new ResponseEntity<>(service.doPayment(paymentRequest),HttpStatus.OK);
+		
+	}
+	@GetMapping("/order/{orderId}")
+	public ResponseEntity<PaymentResponse> getPaymentDetailsByorderId(@PathVariable long orderId){
+
+        log.info("PaymentController | doPayment is called");
+
+        log.info("PaymentController | doPayment | orderId : " + orderId);
+        
+        return new ResponseEntity<>(service.getPaymentDetailsByOrderId(orderId),HttpStatus.OK);
+	}
+}

@@ -1,0 +1,12 @@
+package spring.raju.dev.response;
+
+import java.time.Instant;
+
+public class PaymentResponse {
+	private long paymentId;
+    private String status;
+    private double paymentMode;
+    private long amount;
+    private Instant paymentDate;
+    private long orderId;
+}

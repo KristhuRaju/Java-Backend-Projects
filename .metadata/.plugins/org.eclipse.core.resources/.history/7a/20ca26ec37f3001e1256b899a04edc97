@@ -1,0 +1,5 @@
+package spring.raju.dev.controller;
+
+public class PaymentController {
+
+}

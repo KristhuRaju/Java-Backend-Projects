@@ -1,0 +1,5 @@
+package spring.raju.dev.response;
+
+public class ProductResponse {
+
+}

@@ -1,0 +1,5 @@
+package spring.raju.dev.model;
+
+public class Order {
+
+}

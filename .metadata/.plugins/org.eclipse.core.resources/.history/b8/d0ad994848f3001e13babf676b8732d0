@@ -1,0 +1,13 @@
+application:
+  name: orderservice
+database-platform: org.hibernate.dialect.MySQL8Dialect
+datasource: ''
+ddl-auto: update
+hibernate: ''
+jpa: ''
+password: Raju@8465
+port: 8083
+server: ''
+spring: ''
+url: jdbc:mysql://localhost:3306/myprojects
+username: root
